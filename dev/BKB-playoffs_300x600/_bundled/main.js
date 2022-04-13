@@ -15,7 +15,7 @@ function start() {
 	tl.from(".proline-end", { duration: .3, opacity: 0 }, "+=.1");
 	tl.to(".chev_1b", { duration: .3, opacity: 0 }, "+=.3");
 
-	tl.add(bb2());
+	tl.add((0, _commonJsCommonJs.bb2)());
 }
 
 start();
@@ -117,6 +117,7 @@ function bb() {
 
 function bb2() {
 	var tl = init();
+	console.log('sldkfjklsdfjl');
 	tl.from(".t2", { duration: .3, opacity: 0 }, "+=.5");
 	tl.to(".t2", { duration: .3, opacity: 0 }, "+=3");
 

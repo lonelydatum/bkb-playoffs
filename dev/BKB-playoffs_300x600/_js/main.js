@@ -1,7 +1,7 @@
 
 
 
-import {init, olg, size, chev, bbSecond, bb2j, cluserF} from '../../_common/js/common.js'
+import {init, olg, size, chev, bbSecond, bb2, cluserF} from '../../_common/js/common.js'
 
 
 
