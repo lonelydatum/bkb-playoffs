@@ -4,27 +4,18 @@
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
 function start() {
-	var tl = (0, _commonJsCommonJs.bbSecond)();
+	var tl = (0, _commonJsCommonJs.init)();
+	tl.add((0, _commonJsCommonJs.cluserF)());
 
-	// tl.to(".chev_1a", {duration:.3, opacity:0}, "+=.1")
+	tl.to([".o-shadow", ".proline", ".o"], { duration: .1, opacity: 0 }, "+=.1");
+	tl.from(".bring", { duration: .25, x: "-=100", opacity: 0 });
+	tl.add((0, _commonJsCommonJs.chev)());
+
+	tl.to(".chev_1a", { duration: .3, opacity: 0 }, "+=.1");
+	tl.from(".proline-end", { duration: .3, opacity: 0 }, "+=.1");
 	tl.to(".chev_1b", { duration: .3, opacity: 0 }, "+=.3");
 
-	// const tl = init()
-	tl.from(".t2", { duration: .3, opacity: 0 }, "+=.1");
-
-	tl.add("done", "+=3");
-	tl.to(".t2", { duration: .3, opacity: 0 }, "done");
-	tl.to(".chev_1a", { duration: .3, opacity: 0 }, "done");
-	tl.to(".bring", { duration: .3, opacity: 0 }, "done");
-
-	tl.from(".proline-end", { duration: .3, opacity: 0 }, "+=.1");
-	tl.from(".cta", { duration: .3, opacity: 0 }, "+=.3");
-
-	tl.add("end", "+=.3");
-	tl.add((0, _commonJsCommonJs.olg)(), "end");
-	tl.from(".footer", { duration: .5, opacity: 0 }, "end");
-	// return tl
-	// tl.add(bb2())
+	tl.add(bb2());
 }
 
 start();
@@ -45,8 +36,8 @@ gsap.defaults({
 });
 
 var READ = {
-	t1: 2.2,
-	t2: 2.7
+	t1: 1.2,
+	t2: 1.5
 };
 
 var SECOND = {
@@ -100,6 +91,10 @@ function bb_a() {
 
 function bbSecond() {
 	var tl = bb_a();
+	tl.to([".o-shadow", ".proline", ".o"], { duration: .1, opacity: 0 }, "+=.1");
+	tl.from(".bring", { duration: .25, x: "-=100", opacity: 0 });
+	tl.add(chev());
+	return tl;
 
 	// tl.add("t2-in")
 	// tl.from(".t1c", {x:`-${size.w}`, duration:.2}, "t2-in")
@@ -108,12 +103,6 @@ function bbSecond() {
 	// tl.add("t2-out", `+=${SECOND.t2}`)
 	// tl.to(".t1c", {x:`-${size.w}`, duration:.3}, "t2-out")
 	// tl.to(".t1d", {x:size.w, duration:.3}, "t2-out")
-
-	tl.to([".o-shadow", ".proline", ".o"], { duration: .1, opacity: 0 }, "+=.1");
-
-	tl.from(".bring", { duration: .25, x: "-=100", opacity: 0 });
-	tl.add(chev());
-	return tl;
 }
 
 function bb() {
@@ -211,6 +200,26 @@ function HOR() {
 	tl.from(".footer", { duration: .5, opacity: 0 }, "end");
 }
 
+function cluserF() {
+	var tl = init();
+	tl.from(".o", { duration: .3, scale: 1, ease: 'back.out', opacity: 0 }, "+=.2");
+	tl.add("proline", "+=.4");
+	tl.from(".o-shadow", { duration: .1, opacity: 0 }, "proline");
+	tl.from(".proline", { scale: 1, duration: .25, opacity: 0, ease: 'back.out' }, "proline");
+
+	tl.to(".proline", { duration: .2, opacity: 0 }, "+=1");
+
+	tl.add("t1-in");
+	tl.from(".t1a", { x: "-" + size.w, duration: .2 }, "t1-in");
+
+	tl.add("t2-in", "+=1");
+	tl.to(".t1a", { x: "" + size.w, duration: .2 }, "t2-in");
+	tl.from(".t1b", { x: "-" + size.w, duration: .2 }, "t2-in");
+	tl.to(".t1b", { x: "" + size.w, duration: .2 }, "+=1");
+
+	return tl;
+}
+
 exports.size = size;
 exports.init = init;
 exports.olg = olg;
@@ -221,6 +230,7 @@ exports.READ = READ;
 exports.bbSecond = bbSecond;
 exports.SECOND = SECOND;
 exports.HOR = HOR;
+exports.cluserF = cluserF;
 
 },{}]},{},[1])
 
