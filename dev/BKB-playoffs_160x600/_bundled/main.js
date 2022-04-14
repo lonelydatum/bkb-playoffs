@@ -112,7 +112,7 @@ function bb() {
 
 function bb2() {
 	var tl = init();
-	console.log('sldkfjklsdfjl');
+
 	tl.from(".t2", { duration: .3, opacity: 0 }, "+=.5");
 	tl.to(".t2", { duration: .3, opacity: 0 }, "+=3");
 
