@@ -156,12 +156,6 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-img {
-  vertical-align: top;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1, 1);
-}
-
 .outline {
   z-index: 99;
   width: inherit;
